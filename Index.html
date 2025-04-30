@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foto privata</title>
+</head>
+<body onload="mostraMessaggio()">
+  <h1>Caricamento in corso...</h1>
+  <script>
+    function mostraMessaggio() {
+      setTimeout(() => {
+        document.body.innerHTML = `
+          <h1>Ti ho fregato!</h1>
+          <p>Questa NON era una foto privata.</p>
+          <p>Hai appena aperto un link sconosciuto. E se fosse stato un virus?</p>
+          <p>Questo sito ha già visto:</p>
+          <ul>
+            <li>Il tuo browser: ${navigator.userAgent}</li>
+            <li>Il tuo fuso orario: ${Intl.DateTimeFormat().resolvedOptions().timeZone}</li>
+          </ul>
+          <p>Attenzione ai link. Anche senza cliccare, potresti essere spiato.</p>
+        `;
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
